@@ -2,11 +2,24 @@ import ProjectCard from "../../components/ProjectsCard";
 
 export default function Projects() {
   return (
-    <main className="max-w-4xl mx-auto space-y-16">
-      <h1 className="text-4xl font-extrabold tracking-tight mb-10">Mes Projets</h1>
+    <main className="space-y-14 pb-12">
+      <div className="bg-white border border-[#DCD8CE] rounded-3xl p-8 md:p-10">
+        <span className="font-mono text-xs uppercase tracking-widest text-[#D71921] block mb-3">
+          INDEX // RÉALISATIONS
+        </span>
+        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-3">
+          Mes Projets
+        </h1>
+        <p className="text-[#5C5A54] text-base md:text-lg max-w-2xl">
+          Une sélection de mes travaux en entreprise, à Epitech et sur mon temps libre autour du web et des systèmes embarqués.
+        </p>
+      </div>
 
       <section>
-        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-black">Projets Professionnels</h2>
+        <div className="flex items-center justify-between mb-6 pb-3 border-b border-dashed border-[#DCD8CE]">
+          <h2 className="text-xl font-bold">Projets Professionnels</h2>
+          <span className="font-mono text-xs text-[#5C5A54]">01 // B2B</span>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <ProjectCard 
             title="Trackap — Plateforme B2B"
@@ -18,12 +31,15 @@ export default function Projects() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-black">Projets Scolaires (Epitech)</h2>
+        <div className="flex items-center justify-between mb-6 pb-3 border-b border-dashed border-[#DCD8CE]">
+          <h2 className="text-xl font-bold">Projets Scolaires (Epitech)</h2>
+          <span className="font-mono text-xs text-[#5C5A54]">02 // SYSTÈME &amp; 3D</span>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <ProjectCard 
             title="42sh"
             description="Interpréteur de commandes Unix complet gérant les pipes, redirections, jobs en arrière-plan et alias."
-            tags={['C', 'Unix', 'Parsing', 'AST']}
+            tags={['C', 'Unix', 'Parsing', 'Processus']}
             href="/projects/42sh"
           />
           <ProjectCard 
@@ -36,11 +52,20 @@ export default function Projects() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-black">Projets Personnels & Hardware</h2>
+        <div className="flex items-center justify-between mb-6 pb-3 border-b border-dashed border-[#DCD8CE]">
+          <h2 className="text-xl font-bold">Projets Personnels &amp; Hardware</h2>
+          <span className="font-mono text-xs text-[#5C5A54]">03 // EMBARQUÉ</span>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <ProjectCard 
+            title="BLE Jammer (ESP32)"
+            description="Outil portable d'analyse du spectre 2.4GHz avec ESP32, double antenne NRF24L01 et interface OLED autonome."
+            tags={['C++', 'ESP32', 'RF 2.4GHz']}
+            href="/projects/ble-jammer"
+          />
+          <ProjectCard 
             title="Traceur GPS Embarqué"
-            description="Prototypage avec ESP32, module GPS NEO-6M et lecteur de carte SD avec interface serveur web."
+            description="Prototypage avec ESP32, module GPS et lecteur de carte SD avec interface serveur web."
             tags={['ESP32', 'C++', 'IoT']}
             href="#"
           />
@@ -49,12 +74,6 @@ export default function Projects() {
             description="Développement d'outils sur M5StickC Plus 2 et intégration Raspberry Pi."
             tags={['Microcontrôleur', 'Linux']}
             href="#"
-          />
-          <ProjectCard 
-            title="BLE Jammer"
-            description="Outil portable d'analyse du spectre 2.4GHz avec ESP32, double antenne NRF24L01 et interface OLED autonome."
-            tags={['C++', 'ESP32', 'RF 2.4GHz']}
-            href="/projects/ble-jammer"
           />
         </div>
       </section>
