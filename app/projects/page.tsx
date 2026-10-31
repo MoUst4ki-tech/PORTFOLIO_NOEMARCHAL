@@ -1,33 +1,49 @@
+import ProjectCard from "../../components/ProjectsCard";
+
 export default function Projects() {
   return (
-    <main className="space-y-12">
-      <h1 className="text-3xl font-bold">Mes Projets</h1>
+    <main className="max-w-4xl mx-auto space-y-16">
+      <h1 className="text-4xl font-extrabold tracking-tight mb-10">Mes Projets</h1>
 
       <section>
-        <h2 className="text-2xl font-bold mb-6 border-b border-black pb-2">Projets Scolaires (Epitech)</h2>
+        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-black">Projets Scolaires (Epitech)</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-6 border border-black">
-            <h3 className="font-bold text-lg mb-2">my_world / my_calculator</h3>
-            <p>Projets d&apos;algorithmique et de rendu graphique bas niveau.</p>
-          </div>
+          <ProjectCard 
+            title="42sh"
+            description="Interpréteur de commandes Unix complet gérant les pipes, redirections, jobs en arrière-plan et alias."
+            tags={['C', 'Unix', 'Parsing', 'AST']}
+            href="/projects/42sh"
+          />
+          <ProjectCard 
+            title="Wolf3D"
+            description="Moteur 3D en Raycasting avec génération procédurale, IA ennemie, armes et système d'éclairage dynamique."
+            tags={['C', 'CSFML', 'Maths', 'Raycasting']}
+            href="/projects/wolf3d"
+          />
         </div>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-6 border-b border-black pb-2">Projets Personnels & Hardware</h2>
+        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-black">Projets Personnels & Hardware</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-6 border border-black">
-            <h3 className="font-bold text-lg mb-2">Traceur GPS Embarqué</h3>
-            <p>
-              Prototypage avec ESP32, module GPS NEO-6M et lecteur de carte SD avec interface serveur web.
-            </p>
-          </div>
-          <div className="p-6 border border-black">
-            <h3 className="font-bold text-lg mb-2">Écosystème M5Stack</h3>
-            <p>
-              Développement d&apos;outils sur M5StickC Plus 2 et intégration Raspberry Pi.
-            </p>
-          </div>
+          <ProjectCard 
+            title="Traceur GPS Embarqué"
+            description="Prototypage avec ESP32, module GPS NEO-6M et lecteur de carte SD avec interface serveur web."
+            tags={['ESP32', 'C++', 'IoT']}
+            href="#"
+          />
+          <ProjectCard 
+            title="Écosystème M5Stack"
+            description="Développement d'outils sur M5StickC Plus 2 et intégration Raspberry Pi."
+            tags={['Microcontrôleur', 'Linux']}
+            href="#"
+          />
+          <ProjectCard 
+            title="BLE Jammer"
+            description="Outil portable d'analyse du spectre 2.4GHz avec ESP32, double antenne NRF24L01 et interface OLED autonome."
+            tags={['C++', 'ESP32', 'RF 2.4GHz']}
+            href="/projects/ble-jammer"
+          />
         </div>
       </section>
     </main>
