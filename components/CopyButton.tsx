@@ -7,8 +7,8 @@ export default function CopyButton({ textToCopy }: { textToCopy: string }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = (e: React.MouseEvent) => {
-    e.preventDefault(); 
-    // Nettoie les espaces pour que le numéro de téléphone se copie d'un bloc
+    e.preventDefault();
+    e.stopPropagation();
     navigator.clipboard.writeText(textToCopy.replace(/\s+/g, ''));
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -17,10 +17,22 @@ export default function CopyButton({ textToCopy }: { textToCopy: string }) {
   return (
     <button 
       onClick={handleCopy}
-      className="absolute right-0 opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-gray-400 hover:text-white"
-      title="Copier"
+      type="button"
+      aria-label={`Copier ${textToCopy}`}
+      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono border border-[#DCD8CE] bg-[#F6F4EE] text-[#181816] hover:bg-[#181816] hover:text-white transition-colors cursor-pointer"
+      title="Copier dans le presse-papiers"
     >
-      {copied ? <Check size={18} className="text-green-400" /> : <Copy size={18} />}
+      {copied ? (
+        <>
+          <Check size={14} className="text-[#D71921]" />
+          <span>Copié</span>
+        </>
+      ) : (
+        <>
+          <Copy size={14} />
+          <span className="hidden sm:inline">Copier</span>
+        </>
+      )}
     </button>
   );
 }
