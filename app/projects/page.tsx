@@ -6,6 +6,18 @@ export default function Projects() {
       <h1 className="text-4xl font-extrabold tracking-tight mb-10">Mes Projets</h1>
 
       <section>
+        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-black">Projets Professionnels</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <ProjectCard 
+            title="Trackap — Plateforme B2B"
+            description="Développement full-stack d'un catalogue de partage et d'un système de gestion de location de véhicules (rent). Conception des interfaces front-end, de l'API back-end et de la base de données."
+            tags={['React', 'TypeScript', 'Node.js', 'MongoDB']}
+            href="/projects/trackap"
+          />
+        </div>
+      </section>
+
+      <section>
         <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-black">Projets Scolaires (Epitech)</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <ProjectCard 
