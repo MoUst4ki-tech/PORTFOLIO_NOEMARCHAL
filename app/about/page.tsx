@@ -33,7 +33,7 @@ export default function About() {
                 </p>
               </div>
               <span className="font-mono text-xs bg-[#F6F4EE] border border-[#DCD8CE] text-[#181816] px-3 py-1 rounded-full uppercase tracking-wider shrink-0 w-fit">
-                2026 - Présent
+                juillet 2026 - décembre 2026 
               </span>
             </div>
             <p className="text-sm text-[#5C5A54] leading-relaxed">
